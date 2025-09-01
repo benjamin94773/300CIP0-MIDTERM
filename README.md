@@ -173,10 +173,10 @@ ls -lh ./images/damma*.ppm
 
 ---
 
-## 📁 Estructura del Proyecto
+## Estructura del Proyecto
 
 ```
-📦 filtros-paralelos/
+filtros-paralelos/
 ├── imagen.h/cpp          # Clase base para imágenes
 ├── PGMimage.h/cpp        # Manejo de imágenes PGM (escala de grises)
 ├── PPMimage.h/cpp        # Manejo de imágenes PPM (color)
@@ -198,7 +198,7 @@ ls -lh ./images/damma*.ppm
 
 ---
 
-## 🎛️ Filtros Implementados
+## Filtros Implementados
 
 ### **Blur (Suavizado)**
 ```cpp
@@ -297,7 +297,7 @@ mpirun -np 4 ./mpi_filterer ./images/damma.ppm ./images/damma_blur_mpi.ppm --f b
 
 ---
 
-## 📈 Análisis de Rendimiento
+## Análisis de Rendimiento
 
 ### **Resultados Principales**
 ```
@@ -322,7 +322,7 @@ Filtro: Blur (suavizado)
 
 ---
 
-## 🚀 Inicio Rápido
+## Inicio Rápido
 
 ### **Opción 1: Ejecución Local Completa**
 ```bash
@@ -418,7 +418,7 @@ docker network prune
 
 ---
 
-## 📋 Requisitos
+## Requisitos
 
 ### **Software:**
 - **g++** con soporte C++11
@@ -442,7 +442,7 @@ docker network prune
 
 ---
 
-## 📚 Referencias
+## Referencias
 
 - [Repositorio base](https://github.com/japeto/netpbm_filters/tree/main)
 - Documentación OpenMPI
