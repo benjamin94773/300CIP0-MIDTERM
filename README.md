@@ -1,12 +1,12 @@
-# 📸 Filtros de Imágenes con Programación Paralela
+# Filtros de Imágenes con Programación Paralela
 
 Este proyecto implementa filtros de procesamiento de imágenes PPM/PGM utilizando diferentes paradigmas de programación paralela: **secuencial**, **Pthreads**, **OpenMP** y **MPI distribuido**.
 
-## 🎯 Objetivo
+## Objetivo
 
 Analizar el impacto de la programación paralela en el tiempo de ejecución del filtrado de imágenes, comparando implementaciones secuenciales y paralelas en entornos Docker.
 
-## 📋 Implementaciones
+## Implementaciones
 
 - **`processor`** - Versión base (solo carga/guardado)
 - **`filterer`** - Versión secuencial con filtros
@@ -16,7 +16,7 @@ Analizar el impacto de la programación paralela en el tiempo de ejecución del 
 
 ---
 
-## 🛠️ Compilación y Ejecución
+## 🛠Compilación y Ejecución
 
 ### **1. Versión Secuencial Base (Processor)**
 ```bash
@@ -124,20 +124,20 @@ mpirun -np 4 ./mpi_filterer ./images/damma.ppm ./images/damma_sharpening_mpi.ppm
 
 ---
 
-## 📊 Resultados de Rendimiento
+## Resultados de Rendimiento
 
 ### **Imagen de Prueba:** damma.ppm (1000x1278 píxeles)
 
 | Implementación | Tiempo de Filtrado | Mejora | Estrategia |
 |----------------|-------------------|--------|------------|
-| **Secuencial** | ~232 ms* | 0% | 1 hilo |
+| **Secuencial** | 232 ms | 0% | 1 hilo |
 | **Pthreads** | 65.30 ms | **+71.9%** | 4 cuadrantes |
 | **OpenMP** | 279.31 ms | **-20.4%** | 3 filtros |
 | **MPI** | 59.21 ms | **+74.5%** | 4 nodos |
 
 *Estimado - requiere validación con filterer en Docker
 
-### **🏆 Ganador: MPI Distribuido**
+### * Ganador: MPI Distribuido**
 - **Mejor tiempo de filtrado:** 59.21 ms
 - **Reducción del 74.5%** comparado con secuencial
 - **Escalabilidad horizontal** efectiva
@@ -177,20 +177,20 @@ ls -lh ./images/damma*.ppm
 
 ```
 📦 filtros-paralelos/
-├── 📄 imagen.h/cpp          # Clase base para imágenes
-├── 📄 PGMimage.h/cpp        # Manejo de imágenes PGM (escala de grises)
-├── 📄 PPMimage.h/cpp        # Manejo de imágenes PPM (color)
-├── 📄 filter.h/cpp          # Algoritmos de filtros (blur, laplace, sharpening)
-├── 📄 timer.h/cpp           # Utilidad para medición de tiempos
-├── 🔧 processor.cpp         # Versión base (carga/guardado)
-├── 🔧 filterer.cpp          # Versión secuencial con filtros
-├── 🧵 pth_filterer.cpp      # Implementación Pthreads
-├── ⚡ omp_filterer.cpp      # Implementación OpenMP
-├── 🌐 mpi_filterer.cpp      # Implementación MPI distribuida
-├── 🐳 docker-compose.yml    # Configuración de 4 nodos
-├── 📋 hostfile              # Lista de hosts MPI
-├── 🛠️ Makefile             # Automatización de compilación
-└── 📸 images/               # Directorio de imágenes de prueba
+├── imagen.h/cpp          # Clase base para imágenes
+├── PGMimage.h/cpp        # Manejo de imágenes PGM (escala de grises)
+├── PPMimage.h/cpp        # Manejo de imágenes PPM (color)
+├── filter.h/cpp          # Algoritmos de filtros (blur, laplace, sharpening)
+├── timer.h/cpp           # Utilidad para medición de tiempos
+├── processor.cpp         # Versión base (carga/guardado)
+├── filterer.cpp          # Versión secuencial con filtros
+├── pth_filterer.cpp      # Implementación Pthreads
+├── omp_filterer.cpp      # Implementación OpenMP
+├── mpi_filterer.cpp      # Implementación MPI distribuida
+├── docker-compose.yml    # Configuración de 4 nodos
+├── hostfile              # Lista de hosts MPI
+├── 🛠Makefile             # Automatización de compilación
+└── images/               # Directorio de imágenes de prueba
     ├── damma.ppm            # Imagen principal de prueba
     ├── sulfur.pgm           # Imagen alternativa
     └── lena.ppm             # Imagen de referencia
@@ -229,7 +229,7 @@ const float sharpening_kernel[3][3] = {
 
 ---
 
-## 🧪 Protocolo de Pruebas
+## Protocolo de Pruebas
 
 ### **Paso 1: Preparar entorno**
 ```bash
@@ -314,7 +314,7 @@ Filtro: Blur (suavizado)
 └──────────────┴──────────────┴────────────────┘
 ```
 
-### **🏆 Conclusiones**
+### **Conclusiones**
 - **MPI distribuido** ofrece el mejor rendimiento
 - **Pthreads** es muy eficiente para memoria compartida
 - **OpenMP** (implementación actual) es ineficiente por estrategia incorrecta
@@ -356,7 +356,7 @@ docker exec -it node1 /home/japeto/app/test_all.sh
 
 ---
 
-## 🔬 Detalles Técnicos
+## Detalles Técnicos
 
 ### **Formatos Soportados**
 - **PGM (P2):** Imágenes en escala de grises
@@ -386,7 +386,7 @@ docker exec -it node1 /home/japeto/app/test_all.sh
 
 ---
 
-## 🧹 Limpieza
+## Limpieza
 
 ### **Limpiar archivos compilados:**
 ```bash
@@ -434,7 +434,7 @@ docker network prune
 
 ---
 
-## 🤝 Autor
+## Autor
 
 **Curso:** Programación Paralela  
 **Proyecto:** Parcial No. 1 - Filtros de Imágenes  
